@@ -68,3 +68,4 @@ PR URL을 사용자에게 전달. Merge는 사용자가 직접.
 - 이슈 번호 없으면 PR 생성 불가
 - PR 제목 TYPE은 반드시 대문자
 - Merge는 절대 하지 않음 (사람이 직접)
+- gh CLI 사용 금지 — `mcp__github__create_pull_request`만 사용
