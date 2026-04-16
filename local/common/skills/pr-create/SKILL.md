@@ -10,9 +10,11 @@ description: GitHub PR 생성. 작업 완료 후 PR 열어달라고 하거나 fe
 ### 1. 현재 브랜치 확인
 ```bash
 git branch --show-current
-git log origin/dev..HEAD --oneline
 ```
-- 브랜치명에서 이슈 번호 추출: `feature/10-user-profile` → `#10`
+- 브랜치명에서 이슈 번호와 TYPE 동시 추출:
+  - `feature/10-user-profile` → `#10`, TYPE: `FEAT`
+  - `chore/3-update-config` → `#3`, TYPE: `CHORE`
+  - `fix/5-login-bug` → `#5`, TYPE: `FIX`
 - 이슈 번호 없으면 중단하고 issue-create 먼저 안내
 
 ### 2. base 브랜치 결정
@@ -26,13 +28,9 @@ git log origin/dev..HEAD --oneline
 | `dev` | `staging` |
 | `staging` | `main` |
 
-### 3. 변경 내역 분석
-```bash
-git log origin/{base}..HEAD --oneline
-git diff origin/{base}...HEAD --stat
-```
-커밋 내역을 보고 TYPE 결정:
-`FEAT` / `FIX` / `REFACTOR` / `TEST` / `DOCS` / `STYLE` / `CHORE` / `PERF`
+### 3. TYPE 결정
+브랜치 prefix에서 바로 추론 (git 조회 불필요):
+`feat/*` → `FEAT` / `fix/*` → `FIX` / `refactor/*` → `REFACTOR` / `test/*` → `TEST` / `chore/*` → `CHORE`
 
 ### 4. PR 내용 작성
 **PR 제목 형식**
