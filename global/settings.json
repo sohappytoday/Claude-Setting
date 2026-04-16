@@ -1,0 +1,13 @@
+{
+  "env": {
+    "MAX_THINKING_TOKENS": "10000",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-haiku-4-5-20251001"
+  },
+  "model": "claude-sonnet-4-6",
+  "autoUpdatesChannel": "latest",
+  
+  "attribution": {
+    "commits": false,              
+    "pullRequests": false
+  }
+}
