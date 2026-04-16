@@ -19,6 +19,10 @@ git log origin/dev..HEAD --oneline
 | 현재 브랜치 | base |
 |-------------|------|
 | `feature/*` | `dev` |
+| `bug/*` | `dev` |
+| `chore/*` | `dev` |
+| `refactor/*` | `dev` |
+| `test/*` | `dev` |
 | `dev` | `staging` |
 | `staging` | `main` |
 
