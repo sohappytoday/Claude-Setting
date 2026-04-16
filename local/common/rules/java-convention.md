@@ -88,7 +88,6 @@ com.example
  │   ├─ dto
  │   ├─ domain
  │   ├─ repository
- │   ├─ mapper
  │   └─ exception
  ├─ global
  │   ├─ config
