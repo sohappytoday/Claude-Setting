@@ -1,0 +1,15 @@
+{
+    "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd 'C:\\Users\\NT130\\Desktop\\인턴\\Claude-Setting' && git add . && git diff --cached --quiet || git commit -m \"chore: auto-save changes\"",
+            "statusMessage": "Auto-committing changes..."
+          }
+        ]
+      }
+    ]
+  }
+}

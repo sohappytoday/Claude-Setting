@@ -9,6 +9,15 @@
   "attribution": {
     "commits": false,              
     "pullRequests": false
+  },
+
+  "permissions": {
+    "allow": [
+      
+    ],
+    "deny": [
+      // 전역에서는 git push를 막아버린다.
+      "Bash(git push*)"
+    ]
   }
-  
 }
