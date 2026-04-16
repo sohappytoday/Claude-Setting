@@ -14,6 +14,11 @@ glob: "**/*"
 - `main`, `dev`, `staging`은 로컬 직접 push 금지 → PR만 가능
 - CI 돌기 전 Merge 금지, CI/Static analysis 실패 시 Merge 금지
 
+**작업 시작 전 필수 절차**
+1. 반드시 issue-create skill로 이슈 먼저 생성
+2. 이슈 템플릿의 브랜치 생성 규칙 참고해서 브랜치 생성
+3. 생성한 브랜치로 체크아웃 후 작업 시작
+
 ## 커밋 (AngularJS Commit Convention)
 | 타입 | 설명 |
 |------|------|
