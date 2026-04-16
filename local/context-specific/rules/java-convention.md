@@ -156,10 +156,10 @@ service
 
 ### Service
 ```java
-@Slf4j
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true) // 또는 @Transactional
+// @Slf4j는 로그가 필요한 경우에만 추가
 ```
 - Service 메서드명은 Controller 메서드명과 동일하게 유지 (분기 호출 제외)
 
@@ -168,20 +168,6 @@ service
 - `from(파라미터 하나)` / `of(파라미터 여러개)` 정적 팩토리 메서드 사용
 - **파라미터에 엔티티 객체 불가** (command dto, response dto에서만 이용)
 - Null 가능 → 객체형 (`Integer`), 불가 → 기본형 (`int`)
-
-### Mapper
-- 애노테이션 없이 커스텀으로 작성
-- `Result dto`, `Common dto` 생성 시 이용
-```java
-public class UserMapper {
-    public UserProfileResult toUserProfileResult(User user) {
-        return UserProfileResult.builder()
-                .id(user.getId())
-                .phone(user.getPhone())
-                .build();
-    }
-}
-```
 
 ### Domain
 ```java
@@ -200,6 +186,11 @@ public class UserMapper {
 - 외부 노출 엔티티는 `publicId` 무조건 생성
 - 생성자는 `private`, 정적 생성 메서드(`create()`) 사용
 - 상속 관계 매핑은 `JOIN 전략` 통일
+
+### 지양하는 애노테이션 (모든 레이어 공통)
+- `@Setter` : 불변성 보장을 위해 사용 금지
+- `@Data` : Setter 포함으로 사용 금지
+- `@AllArgsConstructor` : 필드 순서 의존, 실수 유발 → `@RequiredArgsConstructor` 또는 정적 팩토리 메서드 사용
 
 ---
 
