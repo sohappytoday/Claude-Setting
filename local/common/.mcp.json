@@ -4,7 +4,7 @@
       "command": "cmd",
       "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_TOKEN": "깃허브 토큰"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "깃허브 토큰"
       }
     }
   }
